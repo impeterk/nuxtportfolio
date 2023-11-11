@@ -9,7 +9,7 @@ console.log(data);
 </script>
 
 <template>
-  <div class="bg-slate-300 dark:bg-slate-700 max-w-7xl mx-auto">
+  <div class="bg-slate-300 dark:bg-slate-700 mx-auto">
     {{ data }}
     <RouterLink to="/contact">contact </RouterLink>
     <NuxtImg
