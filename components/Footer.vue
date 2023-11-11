@@ -18,7 +18,9 @@
         <Icon name="devicon:tailwindcss" class="text-2xl"
       /></a>
     </div>
-    <ThemeSwitcher class="absolute right-0 md:right-10" />
+    <ClientOnly>
+      <ThemeSwitcher class="absolute right-0 md:right-10" />
+    </ClientOnly>
   </div>
 </template>
 
