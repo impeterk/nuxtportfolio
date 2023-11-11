@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'dark': 'radial-gradient(circle at 50% -250%, #374151, #111827, #000)',
+        'dark': 'conic-gradient(from 90deg at 50% 0%, #111, 50%, #222, #111)',
         'light': 'conic-gradient(from .5turn at bottom center, lightblue, white)'
       }
     },

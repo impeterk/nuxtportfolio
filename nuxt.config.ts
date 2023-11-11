@@ -14,4 +14,11 @@ export default defineNuxtConfig({
     "/": { prerender: true },
     "/api/**": { cors: true },
   },
+  pages: true,
+  app: {
+    pageTransition: { name: "page", mode: "out-in" },
+  },
+  experimental: {
+    viewTransition: true,
+  },
 });

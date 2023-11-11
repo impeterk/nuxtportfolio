@@ -2,8 +2,9 @@
 
 <template>
   <div>
-    contact page
-    <RouterLink to="/">Home</RouterLink>
+    contact page fesacka stranka
+    <h1 class="text-3xl"></h1>
+    <NuxtLink to="/">Home</NuxtLink>
   </div>
 </template>
 
