@@ -1,4 +1,8 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+useSeoMeta({
+  title: "Peter Kudelas | Full stack web developer",
+});
+</script>
 
 <template>
   <div>
