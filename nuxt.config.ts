@@ -17,8 +17,8 @@ export default defineNuxtConfig({
     "@zadigetvoltaire/nuxt-gtm",
   ],
   gtm: {
+    scriptType: "text/partytown",
     id: "GTM-MQZR67J9",
-    type: "text/partytown",
   },
   image: {
     provider: "proxy",
