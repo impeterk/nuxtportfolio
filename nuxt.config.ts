@@ -40,6 +40,9 @@ export default defineNuxtConfig({
   site: {
     url: "https://peterkudelas.eu",
   },
+  sitemap: {
+    xsl: false,
+  },
   colorMode: {
     classSuffix: "",
   },
