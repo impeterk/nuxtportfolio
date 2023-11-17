@@ -1,4 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+const imageApi =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3000"
+    : "https://peterkudelas.eu";
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
@@ -7,7 +13,24 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",
     "nuxt-icon",
+    "@nuxtjs/partytown",
+    "@zadigetvoltaire/nuxt-gtm",
   ],
+  gtm: {
+    id: "GTM-MQZR67J9",
+    type: "text/partytown",
+  },
+  image: {
+    provider: "proxy",
+    providers: {
+      proxy: {
+        provider: "ipx",
+        options: {
+          baseURL: `${imageApi}/ipx`,
+        },
+      },
+    },
+  },
   colorMode: {
     classSuffix: "",
   },
@@ -27,5 +50,10 @@ export default defineNuxtConfig({
   },
   experimental: {
     viewTransition: true,
+  },
+  runtimeConfig: {
+    public: {
+      imageApi,
+    },
   },
 });
