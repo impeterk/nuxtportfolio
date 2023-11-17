@@ -1,4 +1,14 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const route = useRoute();
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: "https://www.peterkudelas.eu" + route.path,
+    },
+  ],
+});
+</script>
 
 <template>
   <div
