@@ -1,8 +1,5 @@
-export default defineEventHandler(async (event) => {
-  console.log("logging from server");
-  const body = await readBody(event);
-  console.log({ body });
+export default defineEventHandler((event) => {
   return {
-    body,
+    hello: "world",
   };
 });
