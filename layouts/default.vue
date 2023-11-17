@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 const route = useRoute();
+import { env } from "@/config";
 useHead({
   link: [
     {
       rel: "canonical",
-      href: "https://www.peterkudelas.eu" + route.path,
+      href: env + route.path,
     },
   ],
 });

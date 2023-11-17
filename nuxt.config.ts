@@ -38,7 +38,7 @@ export default defineNuxtConfig({
     "nuxt-simple-robots",
   ],
   site: {
-    url: env,
+    url: "https://peterkudelas.eu",
   },
   colorMode: {
     classSuffix: "",
