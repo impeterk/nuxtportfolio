@@ -2,6 +2,31 @@
 
 import { env } from "./config";
 export default defineNuxtConfig({
+  app: {
+    pageTransition: { name: "page", mode: "out-in" },
+    head: {
+      htmlAttrs: {
+        lang: "en",
+      },
+      script: [
+        {
+          innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-MQZR67J9');`,
+        },
+      ],
+      noscript: [
+        {
+          tagPosition: "bodyOpen",
+          dangerous:
+            "<iframe src='https://www.googletagmanager.com/ns.html?id=GTM-MQZR67J9' height='0' width='0' style='display:none;visibility:hidden'></iframe>",
+        },
+      ],
+    },
+  },
+  __dangerouslyDisableSanitizers: ["noscript"],
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
@@ -9,31 +34,20 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",
     "nuxt-icon",
-    "@nuxtjs/partytown",
-    "@zadigetvoltaire/nuxt-gtm",
+    "nuxt-simple-sitemap",
+    "nuxt-simple-robots",
   ],
-  partytown: {
-    forward: ["dataLayer.push"],
-  },
-  gtm: {
-    id: "GTM-MQZR67J9",
-    scriptType: "text/partytown",
+  site: {
+    url: env,
   },
   colorMode: {
     classSuffix: "",
   },
   routeRules: {
-    "/": { prerender: true, cors: true },
+    "/": { prerender: true },
     "/api/**": { cors: true },
   },
-  app: {
-    pageTransition: { name: "page", mode: "out-in" },
-    head: {
-      htmlAttrs: {
-        lang: "en",
-      },
-    },
-  },
+
   googleFonts: {
     families: {
       Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
