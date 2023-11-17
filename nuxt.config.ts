@@ -12,12 +12,19 @@ export default defineNuxtConfig({
     "@nuxtjs/partytown",
     "@zadigetvoltaire/nuxt-gtm",
   ],
+  partytown: {
+    forward: ["dataLayer.push"],
+  },
   gtm: {
-    scriptType: "text/partytown",
     id: "GTM-MQZR67J9",
+    scriptType: "text/partytown",
   },
   colorMode: {
     classSuffix: "",
+  },
+  routeRules: {
+    "/": { prerender: true },
+    "/api/**": { cors: true },
   },
   app: {
     pageTransition: { name: "page", mode: "out-in" },
