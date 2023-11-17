@@ -12,14 +12,14 @@ useSeoMeta({
 
 <template>
   <Hero />
-  <div class="code text-center my-auto space-y-6">
+  <div class="code text-center my-auto md:space-y-6">
     <h3 class="text-3xl w-full">
       <GradientText from="cyan" to="fuchsia"
         >Website under construction</GradientText
       >
     </h3>
     <p class="font-light text-2xl">contact me @</p>
-    <div class="text-8xl space-x-6">
+    <div class="text-7xl space-x-6">
       <a
         href="http://github.com/impeterk"
         target="_blank"
