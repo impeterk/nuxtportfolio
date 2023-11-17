@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     classSuffix: "",
   },
   routeRules: {
-    "/": { prerender: true },
+    "/": { prerender: true, cors: true },
     "/api/**": { cors: true },
   },
   app: {
