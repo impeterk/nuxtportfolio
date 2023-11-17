@@ -20,17 +20,6 @@ export default defineNuxtConfig({
     scriptType: "text/partytown",
     id: "GTM-MQZR67J9",
   },
-  image: {
-    provider: "proxy",
-    providers: {
-      proxy: {
-        provider: "ipx",
-        options: {
-          baseURL: `${imageApi}/ipx`,
-        },
-      },
-    },
-  },
   colorMode: {
     classSuffix: "",
   },

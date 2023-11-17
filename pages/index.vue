@@ -8,6 +8,13 @@ useSeoMeta({
   <div>
     <Hero />
     <NuxtLink to="/contact">contact</NuxtLink>
+    <NuxtImg
+      format="avif"
+      src="/image.jpg"
+      placeholder
+      width="300"
+      height="300"
+    />
   </div>
 </template>
 
