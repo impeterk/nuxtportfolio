@@ -25,7 +25,9 @@
       /></a>
     </div>
     <ClientOnly>
-      <ThemeSwitcher class="absolute right-0 md:right-10" />
+      <ThemeSwitcher
+        class="absolute right-0 md:right-10 max-md:translate-y-1/2"
+      />
     </ClientOnly>
   </div>
 </template>

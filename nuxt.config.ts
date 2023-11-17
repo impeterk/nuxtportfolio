@@ -1,10 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-const imageApi =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:3000"
-    : "https://peterkudelas.eu";
-
+import { env } from "./config";
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
@@ -23,12 +19,13 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: "",
   },
-  routeRules: {
-    "/": { prerender: true },
-    "/api/**": { cors: true },
-  },
   app: {
     pageTransition: { name: "page", mode: "out-in" },
+    head: {
+      htmlAttrs: {
+        lang: "en",
+      },
+    },
   },
   googleFonts: {
     families: {
@@ -42,7 +39,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      imageApi,
+      env,
     },
   },
 });

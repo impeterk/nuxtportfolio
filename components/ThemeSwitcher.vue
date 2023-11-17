@@ -3,7 +3,7 @@ const colorMode = useColorMode();
 </script>
 
 <template>
-  <div class="text-2xl flex gap-2 dark:text-zinc-600">
+  <div class="text-3xl flex gap-2 dark:text-zinc-600">
     <Icon
       class="cursor-pointer"
       name="ph:sun"

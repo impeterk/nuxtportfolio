@@ -5,7 +5,7 @@
     class="text-slate-800 dark:text-zinc-300 max-w-7xl layout mx-auto min-h-screen"
   >
     <Header />
-    <main>
+    <main class="flex flex-col">
       <slot />
     </main>
     <Footer />

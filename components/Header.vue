@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    Component: Header
+    <!-- Component: Header -->
   </div>
 </template>
 
