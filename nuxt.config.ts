@@ -44,17 +44,13 @@ export default defineNuxtConfig({
     },
   },
   site: {
-    url: "https://www.peterkudelas.eu",
+    url: env,
   },
   sitemap: {
     xsl: false,
   },
   colorMode: {
     classSuffix: "",
-  },
-  routeRules: {
-    "/": { prerender: true },
-    "/api/**": { cors: true },
   },
 
   googleFonts: {
