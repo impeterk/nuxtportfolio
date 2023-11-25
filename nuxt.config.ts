@@ -38,7 +38,7 @@ export default defineNuxtConfig({
     "nuxt-simple-robots",
   ],
   site: {
-    url: "https://peterkudelas.eu",
+    url: "www.https://peterkudelas.eu",
   },
   sitemap: {
     xsl: false,
