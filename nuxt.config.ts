@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-
+import {inject} from '@vercel/analytics'
 import { env } from "./config";
 export default defineNuxtConfig({
+  inject();
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
