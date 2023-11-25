@@ -37,8 +37,14 @@ export default defineNuxtConfig({
     "nuxt-simple-sitemap",
     "nuxt-simple-robots",
   ],
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ["/", "sitemap.xml"],
+    },
+  },
   site: {
-    url: "www.https://peterkudelas.eu",
+    url: "https://www.peterkudelas.eu",
   },
   sitemap: {
     xsl: false,
