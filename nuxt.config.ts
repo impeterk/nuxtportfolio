@@ -19,13 +19,13 @@ export default defineNuxtConfig({
       noscript: [
         {
           tagPosition: "bodyOpen",
-          dangerous:
+          innerHTML:
             "<iframe src='https://www.googletagmanager.com/ns.html?id=GTM-MQZR67J9' height='0' width='0' style='display:none;visibility:hidden'></iframe>",
         },
       ],
     },
+    __dangerouslyDisableSanitizers: ["noscript"],
   },
-  __dangerouslyDisableSanitizers: ["noscript"],
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
