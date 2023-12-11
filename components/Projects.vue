@@ -65,7 +65,9 @@ let projects = [
   },
 ];
 
-let activeProject = ref(0);
+let activeProject = useState("project", () => 0);
+
+console.log(activeProject);
 </script>
 
 <template>
@@ -133,6 +135,7 @@ let activeProject = ref(0);
               :src="projects[activeProject].img.desktop"
               alt="project"
               class="w-full"
+              loading="lazy"
             />
           </Transition>
         </div>
