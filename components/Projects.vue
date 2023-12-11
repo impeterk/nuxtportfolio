@@ -127,7 +127,7 @@ console.log(activeProject);
           </div>
         </div>
         <div
-          class="artboard artboard-horizontal justify-center border-t border-info"
+          class="artboard artboard-horizontal justify-center overflow-hidden border-t border-info"
         >
           <Transition name="fade" mode="out-in">
             <NuxtImg
@@ -174,11 +174,19 @@ console.log(activeProject);
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.fade-enter-from {
+  @apply translate-x-1/2;
+}
+
+.fade-leave-to {
+  @apply -translate-x-full;
 }
 </style>
