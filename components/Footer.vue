@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="py-4 gap-2 flex-col md:flex-row flex border-t border-zinc-400 dark:border-zinc-800 font-mono md:items-center lg:justify-center relative"
+    class="py-4 gap-2 flex-col md:flex-row flex border-t border-zinc-400 dark:border-zinc-800 font-mono md:items-center lg:justify-center relative mt-10"
   >
     <p>Peter Kudelas &copy {{ new Date().getFullYear() }} |</p>
     <div class="space-x-3">

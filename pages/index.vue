@@ -8,33 +8,20 @@ useSeoMeta({
   ogTitle: meta.title,
   ogDescription: meta.description,
 });
+
+const ogImageOptions = {
+  title: "Peter Kudelas",
+  description: "Full Stack Web Developer",
+  component: "Example",
+};
+// a. Use the Composition API
+defineOgImage(ogImageOptions);
 </script>
 
 <template>
+  <OgImage v-bind="ogImageOptions" />
   <Hero />
-  <div class="code text-center my-auto md:space-y-6">
-    <h3 class="text-3xl w-full">
-      <GradientText from="cyan" to="fuchsia"
-        >Website under construction</GradientText
-      >
-    </h3>
-    <p class="font-light text-2xl">contact me @</p>
-    <div class="text-7xl space-x-6">
-      <a
-        href="http://github.com/impeterk"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Icon name="mdi:github" class="hover:text-emerald-600"
-      /></a>
-      <a
-        href="http://linkedin.com/in/impeterk"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><Icon name="mdi:linkedin" class="hover:text-sky-700"
-      /></a>
-    </div>
-  </div>
+  <Projects />
 </template>
 
 <style scoped></style>

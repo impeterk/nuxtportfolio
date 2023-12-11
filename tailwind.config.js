@@ -1,3 +1,4 @@
+import defaultTheme from 'tailwindcss/defaultTheme'
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [],
@@ -8,12 +9,13 @@ export default {
         'light': 'conic-gradient(from .5turn at bottom center, lightblue, white)'
       },
       fontFamily: {
-        inter: ['Inter'],
-        code: ['Fira Code']
-      },
+        'code': ['Fira Code', ...defaultTheme.fontFamily.mono],
+        'sans': ['Inter Variable', ...defaultTheme.fontFamily.sans]
+      }
     },
   },
-  plugins: [],
+
+  plugins: [require("daisyui"), require('@tailwindcss/typography')],
   darkMode: 'class'
 }
 

@@ -1,27 +1,18 @@
 <script lang="ts" setup>
-const styles = {
-  teal: "from-teal-600",
-  indigo: "to-indigo-600",
-  cyan: "from-cyan-600",
-  fuchsia: "to-fuchsia-600",
-};
-
 withDefaults(
   defineProps<{
-    from?: keyof typeof styles;
-    to?: keyof typeof styles;
+    from?: string;
+    to?: string;
   }>(),
   {
-    from: "teal",
-    to: "indigo",
+    from: "from-info",
+    to: "to-primary",
   }
 );
 </script>
 
 <template>
-  <span
-    :class="`text-transparent bg-clip-text bg-gradient-to-r ${styles[from]} ${styles[to]}`"
-  >
+  <span :class="`text-transparent bg-clip-text bg-gradient-to-r ${from} ${to}`">
     <slot />
   </span>
 </template>
