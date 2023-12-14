@@ -13,7 +13,7 @@ useHead({
 
 <template>
   <div
-    class="text-slate-800 dark:text-zinc-300 max-w-7xl layout mx-auto px-8 xl:px-0"
+    class="text-slate-800 dark:text-zinc-300 max-w-7xl layout mx-auto px-6 xl:px-0"
   >
     <Header />
     <main class="flex flex-col">

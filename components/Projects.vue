@@ -13,7 +13,7 @@ let projects = [
     bgColor: "bg-sky-600",
     textColor: "text-sky-100",
     borderColor: "border-sky-600",
-    href: "#",
+    href: "https://reddit.peterkudelas.eu",
     icon: "logos:react",
     tech: [
       { name: "react", href: "https://react.dev/" },
@@ -28,13 +28,13 @@ let projects = [
       "Single page Full-stack Web Application for Azure DevOps. Handles user authentification, API calls to Read, Update and Create new tickets. Created with <strong>Vue</strong>, <strong>Pinia</strong> for state management, <strong>TailwindCSS</strong> for styling and <strong>Firebase</strong> for backend.",
     title: "Check my ticket",
     img: {
-      desktop: "/react-mobile.webp",
-      mobile: "/react-mobile.webp",
+      desktop: "/vue-desktop.webp",
+      mobile: "/vue-mobile.webp",
     },
     bgColor: "bg-teal-600",
     textColor: "text-teal-100",
     borderColor: "border-teal-600",
-    href: "#",
+    href: "https://henkel-adhesives.com/en/check-my-ticket.html",
     icon: "logos:vue",
     tech: [
       { name: "VueJS", href: "https://vuejs.org/" },
@@ -49,7 +49,7 @@ let projects = [
     content:
       "Full Stack mulit tenant Web application, which helps you with SEO. Includes user Authentication, REST API and much more. Created with <strong>SvelteKit</strong>, <strong>TailwindCSS</strong> and <strong>Firebase</strong>",
     img: {
-      desktop: "/react-desktop.webp",
+      desktop: "/svelte-desktop.webp",
       mobile: "/react-mobile.webp",
     },
     title: "SEO Catcher",
@@ -66,15 +66,34 @@ let projects = [
 ];
 
 let activeProject = useState("project", () => 0);
-
-console.log(activeProject);
 </script>
 
 <template>
-  <section
-    class="flex flex-col gap-8 max-lg:grid-rows-2 lg:grid lg:grid-cols-3 min-h-screen lg:content-center"
+  <div
+    class="flex flex-col gap-8 lg:grid lg:grid-cols-3 min-h-screen lg:content-center justify-items-center items-center sm:gap-y-20 max-sm:mt-20"
   >
-    <ul class="flex flex-col gap-8 lg:col-start-1 xl:pt-16">
+    <Transition name="fade">
+      <h2
+        class="col-span-3 text-[2.5rem] sm:text-6xl font-code font-extrabold md:font-medium relative"
+      >
+        <GradientText
+          from="from-sky-500"
+          to="to-accent"
+          class="blur-2xl absolute left-0"
+        >
+          {{ "< Projects />" }}
+        </GradientText>
+        <GradientText from="from-info" to="to-info">
+          {{ "< Projects />" }}
+        </GradientText>
+      </h2>
+    </Transition>
+    <div
+      class="mx-auto prose col-span-3 text-justify justify-self-start max-w-6xl"
+    >
+      <p class=""></p>
+    </div>
+    <ul class="flex flex-col gap-8 lg:col-start-1 sm:w-4/5 lg:max-xl:w-full">
       <li v-for="(project, index) in projects">
         <div
           class="collapse collapse-arrow shadow-md shadow-neutral"
@@ -98,12 +117,12 @@ console.log(activeProject);
           </div>
           <div class="collapse-content flex w-full flex-col">
             <div
-              class="prose"
+              class="prose [&_strong]:text-base-100 [&_strong]:underline underline-offset-2"
               :class="project.textColor"
               v-html="project.content"
             />
             <div class="divider divider-neutral my-0"></div>
-            <div class="flex justify-center gap-4 font-bold">
+            <div class="flex justify-center gap-4 font-bold flex-wrap">
               <a
                 v-for="{ name, href } in project.tech"
                 :href="href"
@@ -115,7 +134,7 @@ console.log(activeProject);
         </div>
       </li>
     </ul>
-    <div class="flex h-full flex-col gap-4 lg:col-span-2 lg:col-start-2">
+    <div class="flex h-full flex-col gap-8 lg:col-span-2 lg:col-start-2">
       <div
         class="mockup-browser hidden border border-info bg-base-300 shadow-lg shadow-neutral md:block"
       >
@@ -127,29 +146,34 @@ console.log(activeProject);
           </div>
         </div>
         <div
-          class="artboard artboard-horizontal justify-center overflow-hidden border-t border-info"
+          class="artboard artboard-horizontal w-[640px] h-[360px] xl:w-[736px] xl:h-[414px] overflow-hidden border-t border-info"
         >
           <Transition name="fade" mode="out-in">
             <NuxtImg
               :key="activeProject"
               :src="projects[activeProject].img.desktop"
               alt="project"
-              class="w-full"
               loading="lazy"
+              placeholder
+              class="w-full"
             />
           </Transition>
         </div>
       </div>
-      <div class="mockup-phone md:hidden">
+      <div
+        class="mockup-phone md:hidden border-none dark:bg-neutral-content shadow-lg shadow-neutral"
+      >
         <div class="camera"></div>
         <div class="display">
-          <div class="artboard artboard-demo h-[520px] w-[300px]">
+          <div class="artboard artboard-demo h-[600px] w-[300px] bg-neutral">
             <Transition name="fade" mode="out-in">
               <NuxtImg
                 :key="activeProject"
                 :src="projects[activeProject].img.mobile"
                 alt="project"
-                class="w-full"
+                class="h-full"
+                fit="contain"
+                placeholder
               />
             </Transition>
           </div>
@@ -168,7 +192,7 @@ console.log(activeProject);
         </button></a
       >
     </div>
-  </section>
+  </div>
 </template>
 
 <style scoped>
