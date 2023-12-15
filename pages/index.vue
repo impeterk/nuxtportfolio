@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+
 import { env, meta } from "@/config";
 useSeoMeta({
   title: meta.title,
@@ -22,6 +23,7 @@ defineOgImage(ogImageOptions);
   <OgImage v-bind="ogImageOptions" />
   <Hero />
   <Projects />
+  <Me />
 </template>
 
 <style scoped></style>

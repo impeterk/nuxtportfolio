@@ -25,7 +25,7 @@ let projects = [
     id: 1,
     label: "vue",
     content:
-      "Single page Full-stack Web Application for Azure DevOps. Handles user authentification, API calls to Read, Update and Create new tickets. Created with <strong>Vue</strong>, <strong>Pinia</strong> for state management, <strong>TailwindCSS</strong> for styling and <strong>Firebase</strong> for backend.",
+      "Single page Full-stack Web Application for Azure DevOps. Handles user authentification, CRUD Operations and connection with <strong>Azure LogicApps</strong>. Created with <strong>Vue</strong>, <strong>Pinia</strong> for state management, <strong>TailwindCSS</strong> for styling and <strong>Firebase</strong> for backend.",
     title: "Check my ticket",
     img: {
       desktop: "/vue-desktop.webp",
@@ -47,7 +47,7 @@ let projects = [
     id: 2,
     label: "svelte",
     content:
-      "Full Stack mulit tenant Web application, which helps you with SEO. Includes user Authentication, REST API and much more. Created with <strong>SvelteKit</strong>, <strong>TailwindCSS</strong> and <strong>Firebase</strong>",
+      "Full Stack mulit tenant AI focused Web application Created with <strong>SvelteKit</strong>, <strong>TailwindCSS</strong> and <strong>Firebase</strong>. Handles User authentication to correct organization, dedicated APIs for AI. Application has been developed for Henkel.",
     img: {
       desktop: "/svelte-desktop.webp",
       mobile: "/react-mobile.webp",
@@ -70,11 +70,11 @@ let activeProject = useState("project", () => 0);
 
 <template>
   <div
-    class="flex flex-col gap-8 lg:grid lg:grid-cols-3 min-h-screen lg:content-center justify-items-center items-center sm:gap-y-20 max-sm:mt-20"
+    class="flex flex-col gap-8 sm:gap-0 lg:grid lg:grid-cols-3 min-h-screen lg:content-center justify-items-center items-center sm:gap-y-20 max-sm:mt-20 "
   >
-    <Transition name="fade">
+  <div class="col-span-3 flex w-full content-center items-center max-w-6xl gap-4 justify-center">
       <h2
-        class="col-span-3 text-[2.5rem] sm:text-6xl font-code font-extrabold md:font-medium relative"
+        class="text-[2.5rem] sm:text-6xl font-code font-extrabold md:font-medium relative shrink-0 w-max"
       >
         <GradientText
           from="from-sky-500"
@@ -87,12 +87,9 @@ let activeProject = useState("project", () => 0);
           {{ "< Projects />" }}
         </GradientText>
       </h2>
-    </Transition>
-    <div
-      class="mx-auto prose col-span-3 text-justify justify-self-start max-w-6xl"
-    >
-      <p class=""></p>
-    </div>
+    <div class="h-0.5 bg-gradient-to-r from-info to-accent w-full max-lg:hidden"></div>
+  </div>
+    
     <ul class="flex flex-col gap-8 lg:col-start-1 sm:w-4/5 lg:max-xl:w-full">
       <li v-for="(project, index) in projects">
         <div
@@ -155,7 +152,8 @@ let activeProject = useState("project", () => 0);
               alt="project"
               loading="lazy"
               placeholder
-              class="w-full"
+              class="w-full max-sm:hidden"
+              sizes="0px sm:640px xl:736px"
             />
           </Transition>
         </div>
@@ -171,9 +169,10 @@ let activeProject = useState("project", () => 0);
                 :key="activeProject"
                 :src="projects[activeProject].img.mobile"
                 alt="project"
-                class="h-full"
+                class="h-full sm:hidden"
                 fit="contain"
                 placeholder
+                sizes="300px sm:0px"
               />
             </Transition>
           </div>
