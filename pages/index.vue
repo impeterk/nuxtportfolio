@@ -23,7 +23,7 @@ defineOgImage(ogImageOptions);
   <OgImage v-bind="ogImageOptions" />
   <Hero />
   <Projects />
-  <Me />
+  <AboutMe />
 </template>
 
 <style scoped></style>

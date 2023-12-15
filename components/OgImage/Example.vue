@@ -11,7 +11,7 @@ defineProps({
 
 <template>
   <div
-    class="w-full h-full flex justify-center align-center items-center"
+    class="w-full h-full flex justify-center items-center"
     style="
       background-image: radial-gradient(
         circle at 50% -250%,
